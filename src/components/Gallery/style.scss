@@ -1,0 +1,21 @@
+@import '../../style/variables.scss';
+
+.gallery {
+    width: 1240px;
+    height: 830px;
+    background-color: #F6F6F6;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0 4em;
+        &-card {
+            width: 340px;
+            height: 340px;
+            border-radius: 10px;
+            background-color: $primary-color;
+
+        }
+}
