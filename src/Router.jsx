@@ -8,6 +8,7 @@ import Home from './pages/Home'
 // import FicheLogement from './pages/FicheLogement'
 
 import Header from './components/Header/index.jsx';
+import Footer from './components/Footer/index.jsx';
 // import Footer from './components/Footer/index.jsx';
 
 
@@ -22,6 +23,7 @@ function Router() {
                     <Route path="/logement" element={<FicheLogement />} />
                     <Route path="/*" element={<Error />} />       */}
                 </Routes>
+                <Footer />
             </BrowserRouter>
         </React.StrictMode>
     )   

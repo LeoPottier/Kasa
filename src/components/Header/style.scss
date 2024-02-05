@@ -1,0 +1,37 @@
+@import '../../style/variables.scss';
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+	align-items: center;
+	margin-top: 2em;
+
+	&-nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 15%;
+		font-size: 20px;
+		text-decoration: none;
+
+	}
+}
+
+.nav-link {
+	color: $primary-color;
+}
+
+.nav-active {
+	font-weight: 500;
+	line-height: 142.6%;
+	color: $primary-color;
+	text-decoration: underline;
+	
+	// @include desktop-breakpoint {
+	// 	text-transform: uppercase;
+	// 	margin-left: 3.5625rem;
+	// 	font-size: 1.5rem;
+	// 	text-transform: capitalize;
+	// }
+}
