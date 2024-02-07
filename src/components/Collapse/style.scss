@@ -1,0 +1,44 @@
+@import '../../style/variables.scss';
+
+
+.divBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+        &-dropDown {
+            width: 1000px;
+            color: white;
+            background-color: $primary-color;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &-title {
+            width: 100px;
+            padding: 0.5em 1em;
+        }
+        &-arrow {
+            transition: transform 0.3s ease;
+            padding: 0.5em 1em;
+        }
+        &-arrow.rotated {
+            transform: rotate(180deg)
+        }
+        &-content {
+            transition: transform 0.5s ease;
+            transform: translateY(-100%);
+            color: $primary-color;
+            background-color: $secondary-color;
+            border-radius: 10px;
+            max-width: 1000px;
+        }
+        
+        &-content.show {
+            transform: translateY(0%);
+        }
+}
+
