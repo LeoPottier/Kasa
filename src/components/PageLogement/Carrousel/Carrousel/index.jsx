@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import left from '../../assets/arrow-left.png';
-import right from '../../assets/arrow-right.png';
+import left from '../../../../assets/arrow-left.png';
+import right from '../../../../assets/arrow-right.png';
 import './style.scss';
 
 function Carrousel({ slides }) {
