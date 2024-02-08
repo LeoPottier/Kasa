@@ -1,29 +1,19 @@
 import './style.scss'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Logement from '../../data/logement.json'
 
 function Gallery() {
-    const [logements, setLogements] = useState([]);
-  
-    useEffect(() => {
-      const fetchLogements = async () => {
-        try {
-          const response = await fetch('../../data/logement.json');
-          const data = await response.json();
-          setLogements(data);
-        } catch (error) {
-          console.error('Erreur lors du chargement des logements:', error);
-        }
-      };
-  
-      fetchLogements();
-    }, []); // Le tableau vide signifie que le code à l'intérieur de useEffect s'exécutera une fois après le montage initial du composant.
-  
+  const [logements] = useState(Logement); // Utiliser les données JSON comme état initial
+
     return (
       <div className="gallery">
         {logements.map((logement) => (
           <article key={logement.id} className="gallery-card">
-            <img src={logement.cover} alt="img logement"/>
-            <p>{logement.title}</p>
+            <Link to={`/logement/${logement.id}`}>
+              <img src={logement.cover} alt="img logement"/>
+              <p>{logement.title}</p>
+            </Link>
           </article>
         ))}
       </div>
