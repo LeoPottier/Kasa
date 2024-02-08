@@ -19,11 +19,9 @@ const Collapse = ({title, content}) => {
                     <img src={chevron} className={`divBar-arrow ${isOpen ? 'rotated' : ''}`} alt="fleche slide" />
                 </div>
             </div>
-            {isOpen && (
-                <div className={`divBar-content ${isOpen ? 'show' : '' }`}>
-                    <p>{content}</p>
-                </div>
-            )}
+            <div className={`divBar-content ${isOpen ? 'show' : ''}`}>
+                <p>{content}</p>
+            </div>
         </div>
     );
 };

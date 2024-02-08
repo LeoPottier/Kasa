@@ -7,7 +7,7 @@ function Gallery() {
     useEffect(() => {
       const fetchLogements = async () => {
         try {
-          const response = await fetch('/../../../logement.json');
+          const response = await fetch('../../data/logement.json');
           const data = await response.json();
           setLogements(data);
         } catch (error) {
