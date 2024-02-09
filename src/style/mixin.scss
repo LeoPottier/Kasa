@@ -2,3 +2,23 @@
     margin: auto;
     max-width: 1440px;
 }
+
+@mixin imgcoverwh {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin right-arrow {
+    position: absolute;
+    bottom: 44%;
+    left: 94%;
+    cursor: pointer;
+}
+
+@mixin left-arrow {
+    position: absolute;
+    bottom: 44%;
+    right: 94%;
+    cursor: pointer;
+}
