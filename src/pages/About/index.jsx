@@ -5,22 +5,18 @@ import CollapseData from '../../data/collapse.json'
 import './style.scss'
 
 function About() {
+  document.title = "About - Kasa"
 
-    document.title = "About - Kasa"
-
-    return (
-        <section className='About'>
-          <Banner text="" image={AboutBanner}/>
-        <div className='divBar'>
-          {CollapseData.map((data) => {
-            return (
-              <div key={data.id}>
-                <Collapse title={data.title} content={data.content} />
-              </div>
-            );
-          })}
+  return (
+      <section className='about'>
+        <Banner text="" image={AboutBanner}/>
+        <div className='collapse-container'>
+        {CollapseData.map((data) => (
+          <Collapse key={data.id} title={data.title} content={data.content} />
+        ))}
         </div>
-        </section>
-      );
+      </section>
+  );
 }
+
 export default About;

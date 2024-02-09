@@ -22,3 +22,31 @@
     right: 94%;
     cursor: pointer;
 }
+
+@mixin fontnav {
+    color: $primary-color;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34.22px;
+
+}
+
+@mixin fontimportant {
+    color: $primary-color;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 51.34px;
+}
+
+@mixin fontsmall {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.96px;
+}
+
+@mixin font {
+    color: $primary-color;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.67px;
+}

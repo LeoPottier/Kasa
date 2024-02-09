@@ -1,0 +1,20 @@
+@import '../../../style/variables.scss';
+@import '../../../style/mixin.scss';
+
+.tag-info {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    &-span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 115px;
+        padding: 0 10px;
+        height: 25px;
+        background-color: $background-color;
+        @include fontsmall;
+        color: white;
+        border-radius: 15px;
+    }
+}

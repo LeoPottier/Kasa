@@ -10,16 +10,16 @@ const Collapse = ({title, content}) => {
     }
     
     return (
-        <div className="divBar">
-            <div className="divBar-dropDown">
-                <div className="divBar-title">
+        <div className="collapse">
+            <div className="collapse-dropDown">
+                <div className="collapse-title">
                     <h2>{title}</h2>
                 </div>
-                <div className="divBar-arrow-container" onClick={toggleCollapse}>
-                    <img src={chevron} className={`divBar-arrow ${isOpen ? 'rotated' : ''}`} alt="fleche slide" />
+                <div className="collapse-arrow-container" onClick={toggleCollapse}>
+                    <img src={chevron} className={`collapse-arrow ${isOpen ? 'rotated' : ''}`} alt="fleche slide" />
                 </div>
             </div>
-            <div className={`divBar-content ${isOpen ? 'show' : ''}`}>
+            <div className={`collapse-content ${isOpen ? 'show' : ''}`}>
                 <p>{content}</p>
             </div>
         </div>

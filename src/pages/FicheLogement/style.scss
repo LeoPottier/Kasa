@@ -1,5 +1,34 @@
+@import './../../style/variables.scss';
+@import './../../style/mixin.scss';
+
 .fiche-logement {
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      &--title {
+        @include fontimportant;
+      }
+      &--location {
+        @include font;
+        padding: 10px 0;
+      }
+    }
+    &-collapse {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 30px 0;
+      gap: 75px;
+      &-description {
+        width: 50%;
+      }
+      &-equipement {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+}

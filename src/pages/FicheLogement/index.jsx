@@ -1,6 +1,9 @@
 import { useParams } from "react-router-dom";
 import Carrousel from "../../components/PageLogement/Carrousel";
+import Tags from "../../components/PageLogement/Tag";
 import DataFicheLogement from "../../data/logement.json"
+import './style.scss'
+import Collapse from "../../components/Collapse";
 
 
 function FicheLogement () {
@@ -14,10 +17,24 @@ if (!data) {
 }
 
     return (
-        <section>
-            <div className="fiche-logement">
-                <Carrousel slides={data.pictures} />
+        <section className="fiche-logement">
+            <Carrousel slides={data.pictures} />
+            <div className="fiche-logement-info">
+                <span className="fiche-logement-info--title">{data.title}</span>
+                <span className="fiche-logement-info--location">{data.location}</span>
             </div>
+            <div className="fiche-logement-tags">
+                <Tags tags={data.tags} />
+            </div>
+            <div className="fiche-logement-collapse">
+                <div className="fiche-logement-collapse-description">
+                <Collapse key={data.id} title="Description" content={data.description}/>
+                </div>
+                <div className="fiche-logement-collapse-equipement">
+                <Collapse key={data.id} title="Equipements" content={data.equipments}/>
+                </div>
+            </div>
+
         </section>
     )
 }
