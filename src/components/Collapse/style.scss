@@ -30,21 +30,21 @@
         &-arrow.rotated {
             transform: rotate(180deg)
         }
-        &-content {
-            display: none;
+        &-content {    
             width: 100%;
-            transition: transform 0.5s ease;
-            transform: translateY(-100%);
+            transition: max-height 0.5s ease;
+            transform: translateY(0%);
             color: $primary-color;
             background-color: $secondary-color;
             border-radius: 10px;
-            max-width: 1000px;
+            overflow: hidden;
+            max-height: 0;
         }
         
         &-content.show {
             display: flex;
             flex-direction: column;
-            transform: translateY(0%);
+            max-height: 100px; 
         }
 }
 

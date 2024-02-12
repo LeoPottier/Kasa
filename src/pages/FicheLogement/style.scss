@@ -2,12 +2,14 @@
 @import './../../style/mixin.scss';
 
 .fiche-logement {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
     &-info {
       display: flex;
       flex-direction: column;
+      width: 56em;
       &--title {
         @include fontimportant;
       }
@@ -15,6 +17,15 @@
         @include font;
         padding: 10px 0;
       }
+    }
+    &-location {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &-host {
+      width: 15em;
     }
     &-collapse {
       display: flex;
