@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import Carrousel from "../../components/PageLogement/Carrousel";
 import Tags from "../../components/PageLogement/Tag";
 import Host from "../../components/PageLogement/Host";
-import DataFicheLogement from "../../data/logement.json"
-import './style.scss'
+import Rate from "../../components/PageLogement/Rate";
+import DataFicheLogement from "../../data/logement.json";
+import './style.scss';
 import Collapse from "../../components/Collapse";
 
 
@@ -14,10 +15,19 @@ function FicheLogement () {
     const data = DataFicheLogement.find((logement) => logement.id === id);
 
     if (!data) {
-        return <div>Logement non trouvé</div>; // ou rediriger vers une page d'erreur
+        return <Navigate to="/*" />; // ou rediriger vers une page d'erreur
     }
     
     document.title = data.title + 'Kasa';
+
+    const equipments = data && data.equipments;
+
+    // Variable pour mettre les equipements dans une liste et pouvoir les rangers en colonne
+    const equip = data && equipments.map((item, index) => (
+			<li key={index}>
+				{item}
+			</li>
+	));
 
     return (
         <section className="fiche-logement">
@@ -25,20 +35,25 @@ function FicheLogement () {
                 slides={data.pictures} 
             />
             <div className="fiche-logement-location">
-                <div className="fiche-logement-info">
-                    <span className="fiche-logement-info--title">{data.title}</span>
-                    <span className="fiche-logement-info--location">{data.location}</span>
+                <div className="info-tag">
+                    <div className="fiche-logement-info">
+                        <span className="fiche-logement-info--title">{data.title}</span>
+                        <span className="fiche-logement-info--location">{data.location}</span>
+                    </div>
+                    <div className="fiche-logement-tags">
+                        <Tags 
+                            tags={data.tags} 
+                        />
+                    </div>
                 </div>
-                <div className="fiche-logement-host">
+                <div className="host-rate">
                     <Host 
                         name={data.host.name} 
                         cover={data.host.picture} 
                     />
-                </div>
-                <div className="fiche-logement-tags">
-                    <Tags 
-                        tags={data.tags} 
-                    />
+                    <div className="fiche-logement-rating">
+                        <Rate note={data.rating}/>
+                    </div>
                 </div>
             </div>
             <div className="fiche-logement-collapse">
@@ -51,13 +66,11 @@ function FicheLogement () {
                 </div>
                 <div className="fiche-logement-collapse-equipement">
                     <Collapse 
-                        key={data.id} 
                         title="Equipements" 
-                        content={data.equipments}
+                        content={equip}
                     />
                 </div>
             </div>
-
         </section>
     )
 }

@@ -7,14 +7,31 @@
     justify-content: space-between;
 	align-items: center;
 	margin-top: 2em;
-
+	max-width: 1240px;
+	width: 86%;
+		@media screen and (max-width: $breakpoint-desktop) {
+		gap: 20px;
+	}
+	&-logo {
+		width: 30%;
+	}
+	img {
+		@media screen and (max-width: $breakpoint-desktop) {
+		width: 100%;
+		}
+	}
 	&-nav {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		width: 20%;
 		@include fontnav;
 		text-decoration: none;
+		gap: 20px;
+		@media screen and (max-width: $breakpoint-desktop) {
+			gap: 20px;
+			text-transform: uppercase;
+			@include fontmobile;
+		}
 	}
 }
 
@@ -27,11 +44,4 @@
 	line-height: 142.6%;
 	color: $primary-color;
 	text-decoration: underline;
-	
-	// @include desktop-breakpoint {
-	// 	text-transform: uppercase;
-	// 	margin-left: 3.5625rem;
-	// 	font-size: 1.5rem;
-	// 	text-transform: capitalize;
-	// }
 }

@@ -3,14 +3,13 @@
 
 .host {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    width: 16em;
-    height: 5em;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
     &-name {
         @include font;
-        width: 30PX;
+        width: 80px;
+        text-align: right;
     }
     &-cover {
         height: 5em;

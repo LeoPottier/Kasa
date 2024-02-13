@@ -3,6 +3,10 @@
 
 .error {
     text-align: center;
+    @media screen and (max-width: $breakpoint-desktop) {
+        width: 80%;
+        height: 620px;
+    }
     &-chiffre {
         margin-top: 6rem;
 		margin-bottom: 0.6875rem;
@@ -10,9 +14,19 @@
 		font-size: 15rem;
 		font-weight: 700;
 		line-height: 142.6%;
+        @media screen and (max-width: $breakpoint-desktop) {
+            font-size: 96px;
+            text-align: center;
+            line-height: 136.9px;
+            padding-bottom: 120px;
+        }
     }
     &-message {
         @include fontimportant;
+        @media screen and (max-width: $breakpoint-desktop) {
+            @include font;
+            padding-bottom: 25px;
+        }
     }
     &-link {
 		@include font;

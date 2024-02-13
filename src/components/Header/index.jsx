@@ -6,7 +6,7 @@ import './style.scss'
 function Header() {
     return (
         <header className="header">
-			<Link to="/">
+			<Link className="header-logo" to="/">
 				<img src={logo} alt="Kasa Logo"/>
 			</Link>
 			<nav className="header-nav">

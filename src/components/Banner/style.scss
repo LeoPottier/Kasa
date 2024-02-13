@@ -1,9 +1,17 @@
 @import '../../style/mixin.scss';
+@import '../../style/variables.scss';
 
 .banner {
+    position: relative;
+    max-width: 1240px;
     width: 100%;
     height: 250px;
-    margin: 2em 0;
+    margin: 2em 2em;
+    @media screen and (max-width: $breakpoint-desktop) {
+		margin: 20px;
+        width: 90%;
+        height: 115px;
+    }
     &-img {
         @include imgcoverwh;
         border-radius: 10px;
@@ -16,7 +24,11 @@
 		line-height: 100%;
         position: absolute;
         left: 50%;
-        bottom: 75%;
+        bottom: 35%;
         transform: translate(-50%, -50%);
+        @media screen and (max-width: $breakpoint-desktop) {
+            top: 0px;
+            text-align: left;
+        }
     }
 }
